@@ -58,11 +58,11 @@ button {
 
 /* Animación de tiros */
 .usuarioImg.active {
-  animation: tiro 2s 1;
+  animation: tiro 2.5s 1;
 }
 
 .cpuImg.active1 {
-  animation: tiro1 2s 1;
+  animation: tiro1 2.5s 1;
 }
 
 @keyframes tiro {

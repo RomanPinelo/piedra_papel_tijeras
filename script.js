@@ -58,7 +58,7 @@ botonPiedra.addEventListener('click', () => {
     } else {
       ganador.innerHTML = "¡¡Perdiste!!";
     }
-  }, 2000);
+  }, 2500);
 });
 
 botonPapel.addEventListener('click', () => {
@@ -89,7 +89,7 @@ botonPapel.addEventListener('click', () => {
     } else {
       ganador.innerHTML = "¡¡Perdiste!!";
     }
-  }, 2000);
+  }, 2500);
 });
 
 botonTijera.addEventListener('click', () => {
@@ -120,5 +120,5 @@ botonTijera.addEventListener('click', () => {
     } else {
       ganador.innerHTML = "¡¡Perdiste!!";
     }
-  }, 2000);
+  }, 2500);
 });
