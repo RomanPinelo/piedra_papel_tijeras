@@ -18,75 +18,107 @@ var imgUsuario = [
 ];
 
 var imgCpu = [
-  '<img class="imagenes tijeraCpu" src="./img/cpuImg.jpg">',
-  '<img class="imagenes papelCpu" src="./img/cpuImg1.jpg">',
-  '<img class="imagenes piedraCpu" src="./img/cpuImg2.jpg">'
+  ['<img class="imagenes" src="./img/cpuImg.jpg">', "tijeraCpu"],
+  ['<img class="imagenes" src="./img/cpuImg1.jpg">', "papelCpu"],
+  ['<img class="imagenes" src="./img/cpuImg2.jpg">',"piedraCpu"]
 ];
 
-
-botonPiedra.addEventListener('click', () => {
-  ganador.innerHTML = "";
-  usuarioImagen.innerHTML = "";
-  cpuImagen.innerHTML = "";
-  console.log("Borre toda imagen que haya");
-  usuarioImagen.classList.toggle("active");
-  cpuImagen.classList.toggle("active1");
-  console.log("Active la animación");
-  setTimeout(() => {
-    usuarioImagen.innerHTML = imgUsuario[0];
-    cpuImagen.innerHTML = imgCpu[randomNumber(1, 3)];
-    console.log("Prueba");
-    
-    usuarioImagen.classList.toggle("active");
-    cpuImagen.classList.toggle("active1");
-    console.log("Desactive la animación");
-    
-    // ganador();
-  }, 3000);
-});
-
-botonPapel.addEventListener('click', () => {
-  ganador.innerHTML = "";
-  usuarioImagen.innerHTML = "";
-  cpuImagen.innerHTML = "";
-  console.log("Borre toda imagen que haya");
-  usuarioImagen.classList.toggle("active");
-  cpuImagen.classList.toggle("active1");
-  console.log("Active la animación");
-  setTimeout(() => {
-    usuarioImagen.innerHTML = imgUsuario[2];
-    cpuImagen.innerHTML = imgCpu[randomNumber(1, 3)];
-    console.log("Prueba");
-    
-    usuarioImagen.classList.toggle("active");
-    cpuImagen.classList.toggle("active1");
-    console.log("Desactive la animación");
-
-    // ganador();
-  }, 3000);
-});
-
-botonTijera.addEventListener('click', () => {
-  ganador.innerHTML = "";
-  usuarioImagen.innerHTML = "";
-  cpuImagen.innerHTML = "";
-  console.log("Borre toda imagen que haya");
-  usuarioImagen.classList.toggle("active");
-  cpuImagen.classList.toggle("active1");
-  console.log("Active la animación");
-  setTimeout(() => {
-    usuarioImagen.innerHTML = imgUsuario[1];
-    cpuImagen.innerHTML = imgCpu[randomNumber(1, 3)];
-    console.log("Prueba");
-    
-    usuarioImagen.classList.toggle("active");
-    cpuImagen.classList.toggle("active1");
-    console.log("Desactive la animación");
-
-    // ganador();
-  }, 3000);
-});
-
+//Funciones
 function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
+
+
+//Botones
+botonPiedra.addEventListener('click', () => {
+  let eleccion = "piedraCpu";
+  ganador.innerHTML = "";
+  usuarioImagen.innerHTML = "";
+  cpuImagen.innerHTML = "";
+  console.log("Borre toda imagen que haya");
+  usuarioImagen.classList.toggle("active");
+  cpuImagen.classList.toggle("active1");
+  console.log("Active la animación");
+  setTimeout(() => {
+    let numRand = randomNumber(0, 3);
+    console.log(numRand);
+    usuarioImagen.innerHTML = imgUsuario[0];
+    cpuImagen.innerHTML = imgCpu[numRand][0];
+    console.log("Prueba");
+    
+    usuarioImagen.classList.toggle("active");
+    cpuImagen.classList.toggle("active1");
+    console.log("Desactive la animación");
+
+    console.log("Comprobaré quien gana o quedan empates");
+    if (eleccion == imgCpu[numRand][1]) {
+      ganador.innerHTML = "Empates";
+    } else if ((eleccion) && (imgCpu[numRand][1] == "tijeraCpu")) {
+      ganador.innerHTML = "¡¡Ganaste!!";
+    } else {
+      ganador.innerHTML = "¡¡Perdiste!!";
+    }
+  }, 2000);
+});
+
+botonPapel.addEventListener('click', () => {
+  let eleccion = "papelCpu";
+  ganador.innerHTML = "";
+  usuarioImagen.innerHTML = "";
+  cpuImagen.innerHTML = "";
+  console.log("Borre toda imagen que haya");
+  usuarioImagen.classList.toggle("active");
+  cpuImagen.classList.toggle("active1");
+  console.log("Active la animación");
+  setTimeout(() => {
+    let numRand = randomNumber(0, 3);
+    console.log(numRand);
+    usuarioImagen.innerHTML = imgUsuario[2];
+    cpuImagen.innerHTML = imgCpu[numRand][0];
+    console.log("Prueba");
+    
+    usuarioImagen.classList.toggle("active");
+    cpuImagen.classList.toggle("active1");
+    console.log("Desactive la animación");
+
+    console.log("Comprobaré quien gana o quedan empates");
+    if (eleccion == imgCpu[numRand][1]) {
+      ganador.innerHTML = "Empates";
+    } else if ((eleccion) && (imgCpu[numRand][1] == "piedraCpu")) {
+      ganador.innerHTML = "¡¡Ganaste!!";
+    } else {
+      ganador.innerHTML = "¡¡Perdiste!!";
+    }
+  }, 2000);
+});
+
+botonTijera.addEventListener('click', () => {
+  let eleccion = "tijeraCpu";
+  ganador.innerHTML = "";
+  usuarioImagen.innerHTML = "";
+  cpuImagen.innerHTML = "";
+  console.log("Borre toda imagen que haya");
+  usuarioImagen.classList.toggle("active");
+  cpuImagen.classList.toggle("active1");
+  console.log("Active la animación");
+  setTimeout(() => {
+    let numRand = randomNumber(0, 3);
+    console.log(numRand);
+    usuarioImagen.innerHTML = imgUsuario[1];
+    cpuImagen.innerHTML = imgCpu[numRand][0];
+    console.log("Prueba");
+    
+    usuarioImagen.classList.toggle("active");
+    cpuImagen.classList.toggle("active1");
+    console.log("Desactive la animación");
+
+    console.log("Comprobaré quien gana o quedan empates");
+    if (eleccion == imgCpu[numRand][1]) {
+      ganador.innerHTML = "Empates";
+    } else if ((eleccion) && (imgCpu[numRand][1] == "papelCpu")) {
+      ganador.innerHTML = "¡¡Ganaste!!";
+    } else {
+      ganador.innerHTML = "¡¡Perdiste!!";
+    }
+  }, 2000);
+});

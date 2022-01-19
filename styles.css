@@ -36,6 +36,7 @@ button {
 }
 
 .tijera {
+  color: #fff;
   background-color: #095a5a;
   box-shadow: 0 0 10px #095a5a, 0 0 40px #095a5a, 0 0 80px #095a5a;
 }
@@ -53,16 +54,15 @@ button {
 .usuarioImg, .cpuImg {
   width: 20vh;
   height: 20vh;
-  border: 1px solid #fff;
 }
 
 /* Animación de tiros */
 .usuarioImg.active {
-  animation: tiro 3s 1;
+  animation: tiro 2s 1;
 }
 
 .cpuImg.active1 {
-  animation: tiro1 3s 1;
+  animation: tiro1 2s 1;
 }
 
 @keyframes tiro {
